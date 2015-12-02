@@ -1,2 +1,8 @@
-<RCC/>
-
+<RCC>
+    <qresource prefix="/shaders">
+        <file>point_sprite.frag</file>
+        <file>point_sprite.vert</file>
+        <file>billboard.frag</file>
+        <file>billboard.vert</file>
+    </qresource>
+</RCC>
