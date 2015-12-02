@@ -4,17 +4,25 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Qt-blending
 TEMPLATE = app
 
-
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    glwidget.cpp \
+    sprite.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    glwidget.h \
+    sprite.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    shaders.qrc
+
+DISTFILES +=
