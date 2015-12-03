@@ -1,6 +1,8 @@
 # OpenGL-State-Blending
 Qt 5.5.1/OpenGL 4.2 app with options to change blending state.
 
+On Windows use Qt 5.4, otherwise OpenGL linking is complicated.
+
 Small app to help with reasoning about OpenGL state blending (as opposed to blending in a shader). There are more more blend
 state options and combinations available than I can keep straight in my head. 
 
