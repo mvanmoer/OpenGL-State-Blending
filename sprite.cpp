@@ -66,3 +66,13 @@ void Sprite::Display(float *color, const QMatrix4x4& pv) {
 
     shaderProgram->release();
 }
+
+void Sprite::Display(float r, float g, float b, float a, const QMatrix4x4& pv)
+{
+    float premultiplied[4];
+    premultiplied[0] = r;
+    premultiplied[1] = g;
+    premultiplied[2] = b;
+    premultiplied[3] = a;
+    this->Display(premultiplied, pv);
+}

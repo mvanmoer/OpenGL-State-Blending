@@ -63,7 +63,7 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_14">
              <item>
-              <widget class="QCheckBox" name="checkBox"/>
+              <widget class="QCheckBox" name="premultiply_alpha_checkbox"/>
              </item>
              <item>
               <widget class="QLabel" name="label_13">
@@ -71,7 +71,7 @@
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pre-multiply α&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
                <property name="buddy">
-                <cstring>checkBox</cstring>
+                <cstring>premultiply_alpha_checkbox</cstring>
                </property>
               </widget>
              </item>
@@ -97,7 +97,10 @@
            <item>
             <widget class="QComboBox" name="srcFactorOpts">
              <property name="currentText">
-              <string>GL_ZERO</string>
+              <string>GL_ONE</string>
+             </property>
+             <property name="currentIndex">
+              <number>1</number>
              </property>
              <item>
               <property name="text">
@@ -1145,7 +1148,7 @@
    </widget>
    <zorder>layoutWidget</zorder>
    <zorder>myGLCanvas</zorder>
-   <zorder>checkBox</zorder>
+   <zorder>premultiply_alpha_checkbox</zorder>
    <zorder>label_13</zorder>
    <zorder>label_13</zorder>
   </widget>

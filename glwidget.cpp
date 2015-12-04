@@ -14,7 +14,8 @@ GLWidget::GLWidget(QWidget *parent)
       separatedstfactor(GL_ZERO),
       blendeq(GL_ADD),
       logicoping(false),
-      logicop(GL_COPY)
+      logicop(GL_COPY),
+      premultalpha(false)
 {
     clearColor[0] = clearColor[1] = clearColor[2] = clearColor[3] = 0.0f;
     topColor[0] = middleColor[1] = bottomColor[2] = 1.0f;
@@ -112,6 +113,11 @@ void GLWidget::setEnableBlending(bool state)
 
 void GLWidget::setEnableDepthTest(bool state) {
     depthtesting = state;
+    update();
+}
+
+void GLWidget::setEnablePreMultiplyAlpha(bool state) {
+    premultalpha = state;
     update();
 }
 
@@ -254,11 +260,24 @@ void GLWidget::initializeGL() {
 void GLWidget::paintGL()
 {
     // ~ display callback in freeglut
-    glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+
+    if (premultalpha) {
+        glClearColor(clearColor[0]*clearColor[3], clearColor[1]*clearColor[3], clearColor[2]*clearColor[3], clearColor[3]);
+    }
+    else {
+        glClearColor(clearColor[0], clearColor[1], clearColor[2], clearColor[3]);
+    }
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
     if (blending) {
         glEnable(GL_BLEND);
-        glBlendColor(blendColor[0], blendColor[1], blendColor[2], blendColor[3]);
+        if (premultalpha) {
+            glBlendColor(blendColor[0] * blendColor[3], blendColor[1] * blendColor[3], blendColor[2] * blendColor[3], blendColor[3]);
+        }
+        else {
+            glBlendColor(blendColor[0], blendColor[1], blendColor[2], blendColor[3]);
+        }
         if (!separateblending) {
             glBlendFunc(srcfactor, dstfactor);
             glBlendEquation(blendeq);
@@ -286,11 +305,18 @@ void GLWidget::paintGL()
     else {
         glDisable(GL_COLOR_LOGIC_OP);
     }
-    topSprite->Display(topColor, persp * cam);
-    middleSprite->Display(middleColor, persp * cam);
-    bottomSprite->Display(bottomColor, persp * cam);
-}
 
+    if (premultalpha) {
+        topSprite->Display(topColor[0]*topColor[3], topColor[1]*topColor[3], topColor[2]*topColor[3], topColor[3], persp*cam);
+        middleSprite->Display(middleColor[0]*middleColor[3], middleColor[1]*middleColor[3], middleColor[2]*middleColor[3], middleColor[3], persp*cam);
+        bottomSprite->Display(bottomColor[0]*bottomColor[3], bottomColor[1]*bottomColor[3], bottomColor[2]*bottomColor[3], bottomColor[3], persp*cam);
+    }
+    else {
+        topSprite->Display(topColor, persp * cam);
+        middleSprite->Display(middleColor, persp * cam);
+        bottomSprite->Display(bottomColor, persp * cam);
+    }
+}
 
 
 

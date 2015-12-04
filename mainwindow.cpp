@@ -71,6 +71,12 @@ void MainWindow::on_separate_checkbox_toggled(bool checked)
     ui->myGLCanvas->setEnabledSeparateBlending(checked);
 }
 
+void MainWindow::on_premultiply_alpha_checkbox_toggled(bool checked)
+{
+    ui->myGLCanvas->setEnablePreMultiplyAlpha(checked);
+}
+
+
 // Dropdown menus
 void MainWindow::on_srcFactorOpts_activated(const QString &arg1)
 {
@@ -134,16 +140,8 @@ void MainWindow::on_blendColorButton_clicked()
 }
 
 
-
-
-
-
-
-
-
-
-
 void MainWindow::on_actionExit_triggered()
 {
     close();
 }
+
