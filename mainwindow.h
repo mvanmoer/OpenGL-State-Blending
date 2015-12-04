@@ -60,6 +60,8 @@ private slots:
 
     void on_separate_checkbox_toggled(bool checked);
 
+    void on_actionExit_triggered();
+
 private:
     Ui::MainWindow *ui;
 };

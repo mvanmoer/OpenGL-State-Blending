@@ -142,3 +142,8 @@ void MainWindow::on_blendColorButton_clicked()
 
 
 
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
+}
