@@ -35,7 +35,7 @@
      <rect>
       <x>540</x>
       <y>10</y>
-      <width>443</width>
+      <width>449</width>
       <height>538</height>
      </rect>
     </property>
@@ -60,6 +60,23 @@
              </property>
             </widget>
            </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_14">
+             <item>
+              <widget class="QCheckBox" name="checkBox"/>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;pre-multiply α&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               </property>
+               <property name="buddy">
+                <cstring>checkBox</cstring>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
           </layout>
          </item>
          <item>
@@ -80,7 +97,7 @@
            <item>
             <widget class="QComboBox" name="srcFactorOpts">
              <property name="currentText">
-              <string>GL_ONE</string>
+              <string>GL_ZERO</string>
              </property>
              <item>
               <property name="text">
@@ -599,7 +616,7 @@
               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
              <property name="buddy">
-              <cstring>blendEqOps</cstring>
+              <cstring>sepBlendEqOps</cstring>
              </property>
             </widget>
            </item>
@@ -815,6 +832,9 @@
            </property>
            <property name="alignment">
             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="buddy">
+            <cstring>middle_alpha_slider</cstring>
            </property>
           </widget>
          </item>
@@ -1125,6 +1145,9 @@
    </widget>
    <zorder>layoutWidget</zorder>
    <zorder>myGLCanvas</zorder>
+   <zorder>checkBox</zorder>
+   <zorder>label_13</zorder>
+   <zorder>label_13</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -1216,12 +1239,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>891</x>
-     <y>364</y>
+     <x>915</x>
+     <y>354</y>
     </hint>
     <hint type="destinationlabel">
-     <x>942</x>
-     <y>363</y>
+     <x>985</x>
+     <y>354</y>
     </hint>
    </hints>
   </connection>
@@ -1232,12 +1255,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>934</x>
-     <y>397</y>
+     <x>985</x>
+     <y>391</y>
     </hint>
     <hint type="destinationlabel">
-     <x>920</x>
-     <y>385</y>
+     <x>915</x>
+     <y>391</y>
     </hint>
    </hints>
   </connection>
@@ -1248,12 +1271,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>906</x>
-     <y>401</y>
+     <x>915</x>
+     <y>391</y>
     </hint>
     <hint type="destinationlabel">
-     <x>940</x>
-     <y>399</y>
+     <x>985</x>
+     <y>391</y>
     </hint>
    </hints>
   </connection>
@@ -1280,12 +1303,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>891</x>
-     <y>439</y>
+     <x>915</x>
+     <y>428</y>
     </hint>
     <hint type="destinationlabel">
-     <x>942</x>
-     <y>439</y>
+     <x>985</x>
+     <y>428</y>
     </hint>
    </hints>
   </connection>
@@ -1312,12 +1335,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>907</x>
-     <y>473</y>
+     <x>915</x>
+     <y>465</y>
     </hint>
     <hint type="destinationlabel">
-     <x>931</x>
-     <y>473</y>
+     <x>985</x>
+     <y>465</y>
     </hint>
    </hints>
   </connection>
@@ -1328,12 +1351,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>930</x>
-     <y>503</y>
+     <x>985</x>
+     <y>502</y>
     </hint>
     <hint type="destinationlabel">
-     <x>919</x>
-     <y>499</y>
+     <x>915</x>
+     <y>502</y>
     </hint>
    </hints>
   </connection>
@@ -1344,12 +1367,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>886</x>
-     <y>512</y>
+     <x>915</x>
+     <y>502</y>
     </hint>
     <hint type="destinationlabel">
-     <x>942</x>
-     <y>513</y>
+     <x>985</x>
+     <y>502</y>
     </hint>
    </hints>
   </connection>
