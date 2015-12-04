@@ -15,6 +15,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    void keyPressEvent(QKeyEvent *);
+
 private slots:
 
     void on_top_alpha_slider_valueChanged(int value);
