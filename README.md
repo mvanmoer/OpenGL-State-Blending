@@ -11,7 +11,7 @@ The scene is simple, 3 billboard sprites: top, middle, and bottom. The top one i
 The GUI:
 * GL_BLEND checkbox: glEnable/glDisable of GL_BLEND
 * GL_DEPTH_TEST checkbox: glEnable/glDisable of GL_DEPTH_TEST
-
+* pre-multiply alpha checkbox: Whether or not to pre-multiply the RGB components by the alpha value. 
 * src factor menu: The src factor for the first argument of glBlendFunc and glBlendFuncSeparate
 * dst factor menu: The dst factor for the second argument of glBlendFunc and glBlendFuncSeparate
 * blend equation menu: The equation for glBlendEquation or the first argument of glBlendEquationSeparate
