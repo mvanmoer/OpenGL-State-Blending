@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1011</width>
-    <height>611</height>
+    <width>1000</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -80,7 +80,7 @@
            <item>
             <widget class="QComboBox" name="srcFactorOpts">
              <property name="currentText">
-              <string>GL_ZERO</string>
+              <string>GL_ONE</string>
              </property>
              <item>
               <property name="text">
@@ -368,7 +368,10 @@
            <item>
             <widget class="QComboBox" name="sepSrcFactorOps">
              <property name="currentText">
-              <string>GL_ZERO</string>
+              <string>GL_ONE</string>
+             </property>
+             <property name="currentIndex">
+              <number>1</number>
              </property>
              <item>
               <property name="text">
@@ -548,6 +551,16 @@
              </item>
              <item>
               <property name="text">
+               <string>GL_CONSTANT_ALPHA</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>GL_ONE_MINUS_CONSTANT_ALPHA</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
                <string>GL_SRC_ALPHA_SATURATE</string>
               </property>
              </item>
@@ -669,10 +682,10 @@
             <number>100</number>
            </property>
            <property name="value">
-            <number>100</number>
+            <number>0</number>
            </property>
            <property name="sliderPosition">
-            <number>100</number>
+            <number>0</number>
            </property>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -685,7 +698,7 @@
             <number>100</number>
            </property>
            <property name="value">
-            <number>100</number>
+            <number>0</number>
            </property>
           </widget>
          </item>
@@ -953,7 +966,7 @@
             <number>100</number>
            </property>
            <property name="value">
-            <number>100</number>
+            <number>0</number>
            </property>
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -966,7 +979,7 @@
             <number>100</number>
            </property>
            <property name="value">
-            <number>100</number>
+            <number>0</number>
            </property>
           </widget>
          </item>
@@ -1118,12 +1131,26 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1011</width>
+     <width>1000</width>
      <height>27</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionExit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
@@ -1141,18 +1168,26 @@
   <tabstop>depth_test_checkbox</tabstop>
   <tabstop>srcFactorOpts</tabstop>
   <tabstop>dstFactorOps</tabstop>
+  <tabstop>blendEqOps</tabstop>
   <tabstop>separate_checkbox</tabstop>
   <tabstop>sepSrcFactorOps</tabstop>
   <tabstop>sepDstFactorOps</tabstop>
+  <tabstop>sepBlendEqOps</tabstop>
   <tabstop>glClearColorButton</tabstop>
   <tabstop>clear_color_alpha_slider</tabstop>
+  <tabstop>clear_color_alpha_spinbox</tabstop>
   <tabstop>topColorButton</tabstop>
   <tabstop>top_alpha_slider</tabstop>
+  <tabstop>top_alpha_spinBox</tabstop>
+  <tabstop>middleColorButton</tabstop>
+  <tabstop>middle_alpha_slider</tabstop>
+  <tabstop>middle_alpha_spinBox</tabstop>
   <tabstop>bottomColorButton</tabstop>
   <tabstop>bottom_alpha_slider</tabstop>
+  <tabstop>bottom_alpha_spinBox</tabstop>
   <tabstop>blendColorButton</tabstop>
   <tabstop>const_color_alpha_slider</tabstop>
-  <tabstop>blendEqOps</tabstop>
+  <tabstop>blend_color_alpha_spinBox</tabstop>
   <tabstop>colorLogic_checkbox</tabstop>
   <tabstop>logicOpOps</tabstop>
  </tabstops>
