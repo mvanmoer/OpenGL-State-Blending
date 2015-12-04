@@ -15,6 +15,9 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+protected:
+    void keyPressEvent(QKeyEvent *);
+
 private slots:
 
     void on_top_alpha_slider_valueChanged(int value);
@@ -56,6 +59,8 @@ private slots:
     void on_bottom_alpha_slider_valueChanged(int value);
 
     void on_separate_checkbox_toggled(bool checked);
+
+    void on_actionExit_triggered();
 
 private:
     Ui::MainWindow *ui;
