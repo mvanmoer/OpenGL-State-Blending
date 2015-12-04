@@ -62,6 +62,8 @@ private slots:
 
     void on_actionExit_triggered();
 
+    void on_premultiply_alpha_checkbox_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
 };

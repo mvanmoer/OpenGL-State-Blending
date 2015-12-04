@@ -43,6 +43,7 @@ public slots:
     void setSeparateBlendEquation(const QString&);
     void setEnableColorLogicOp(bool);
     void setLogicOp(const QString&);
+    void setEnablePreMultiplyAlpha(bool);
     void cleanup();
 
 signals:
@@ -71,6 +72,7 @@ private:
     GLenum sepeq;
     bool logicoping;
     GLenum logicop;
+    bool premultalpha;
 
     float clearColor[4];
     float blendColor[4];

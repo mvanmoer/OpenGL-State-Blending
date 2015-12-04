@@ -23,6 +23,7 @@ public:
     ~Sprite();
     QOpenGLShaderProgram* getShaderProgram() const { return shaderProgram; }
     void Display(float *, const QMatrix4x4&);
+    void Display(float, float, float, float, const QMatrix4x4&);
     QMatrix4x4* getModelMtx() { return &model; }
 };
 
